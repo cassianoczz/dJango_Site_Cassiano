@@ -8,4 +8,4 @@ Disponivel para acesso em https://djangoproczz.herokuapp.com/
 
 ## CodeCov
 
-##PyUp
+## PyUp
