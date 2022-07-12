@@ -1,0 +1,1 @@
+web: gunicorn dJangoPro.wsgi --log-file -
