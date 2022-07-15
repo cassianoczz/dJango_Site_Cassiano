@@ -31,6 +31,8 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+AUTH_USER_MODEL = 'base.User'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -120,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media Files
@@ -149,9 +151,9 @@ if AWS_ACCESS_KEY_ID:
 
     # Media Assets
     MEDIAFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
-    MEDIA_S3_PATH = 'static'
-    MEDIA_ROOT = f'/{STATIC_S3_PATH}/'
-    MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
+    MEDIA_S3_PATH = 'media'
+    MEDIA_ROOT = f'/{MEDIA_S3_PATH}/'
+    MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{MEDIA_S3_PATH}/'
 
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
