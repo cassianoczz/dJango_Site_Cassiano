@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os.path
 from functools import partial
 
+import debug_toolbar.middleware
 import dj_database_url
 from decouple import config, Csv
 from pathlib import Path
@@ -75,6 +76,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dJangoPro.wsgi.application'
 
+# Config. Django Debug Toolbar
+
+INTERNAL_IPS=config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
