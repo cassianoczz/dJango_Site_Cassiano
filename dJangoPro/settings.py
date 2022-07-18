@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os.path
 from functools import partial
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 import debug_toolbar.middleware
 import dj_database_url
 from decouple import config, Csv
@@ -170,3 +173,10 @@ if AWS_ACCESS_KEY_ID:
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Sentry
+
+SENTRY_DSN = config('SENTRY_DSN', default=None)
+
+if SENTRY_DSN:
+    sentry_sdk.init(dsn=SENTRY_DSN,integrations=[DjangoIntegration()])
