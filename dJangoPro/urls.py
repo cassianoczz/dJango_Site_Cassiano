@@ -21,7 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('dJangoPro.base.urls'))
+    path('', include('dJangoPro.base.urls')),
+    path('videos/', include('dJangoPro.videos.urls'))
 ]
 
 if settings.DEBUG:
