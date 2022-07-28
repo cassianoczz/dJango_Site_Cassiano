@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Cassiano Zucco Python</title>
+    <title>{% block title %}Cassiano Zucco Python{% endblock title %}</title>
 
-    <meta name="description" content="Pagina perfil Cassiano Zucco Dev. Python">
+    <meta name="description" content="{% block description %}Pagina perfil Cassiano Zucco Dev. Python{% endblock description %}">
     <meta name="author" content="Cassiano Zucco">
     <link rel=icon type="image/x-icon" href="{%static 'img/favicon.ico'  %}"/>
     <link href="{%static 'css/bootstrap.min.css'  %} " rel="stylesheet">
@@ -36,34 +36,9 @@
                     </ul>
                 </div>
             </nav>
-            <div class="jumbotron">
-                <h2>
-                    Cassiano Zucco - Dev. Python
-                </h2>
-                <p>
-                    Engenheiro com 10 anos de experiência na área de
-                    tecnologia, conhecimento em T, em toda a área de
-                    computação, com foco em Engenharia de Software,
-                    gerenciamento de equipes e projetos, resolução de
-                    problemas complexos e construção de novos produtos.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <h5 class="card-header">
-                            Mais detalhes sobre Cassiano
-                        </h5>
-                        <div class="card-body">
-                            <p class="card-text">
-                                <img src="{% static 'img/Cassiano.jpeg' %}" alt="Foto de Cassiano Zucco"
-                                     class="img-thumbnail" width="250" height="250" float-left mr-3/>
-                                Carreira profissional
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            {% block body %}{% endblock body %}
+
             <footer class="main-footer mt-4 pt-4">
                 <div class="container">
                     <div class="row">

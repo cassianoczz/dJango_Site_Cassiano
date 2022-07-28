@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static%}
+
+{% block title %}Cassiano Zucco Python - Home{% endblock title %}
+{% block body %}
+<div class="jumbotron">
+    <h2>
+        Cassiano Zucco - Dev. Python
+    </h2>
+    <p>
+        Engenheiro com 10 anos de experiência na área de
+        tecnologia, conhecimento em T, em toda a área de
+        computação, com foco em Engenharia de Software,
+        gerenciamento de equipes e projetos, resolução de
+        problemas complexos e construção de novos produtos.
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <h5 class="card-header">
+                Mais detalhes sobre Cassiano
+            </h5>
+            <div class="card-body">
+                <p class="card-text">
+                    <img src="{% static 'img/Cassiano.jpeg' %}" alt="Foto de Cassiano Zucco"
+                         class="img-thumbnail" width="250" height="250" float-left mr-3/>
+                    Carreira profissional
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
