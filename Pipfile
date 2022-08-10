@@ -12,7 +12,7 @@ dj-database-url = "*"
 django-s3-folder-storage = "*"
 django-debug-toolbar = "*"
 sentry-sdk = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 flake8 = "*"
