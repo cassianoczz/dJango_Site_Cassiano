@@ -33,7 +33,6 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-#ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
 
 AUTH_USER_MODEL = 'base.User'
 
@@ -154,14 +153,14 @@ if AWS_ACCESS_KEY_ID:
     STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     STATIC_S3_PATH = 'static'
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
-    STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
+    STATIC_URL = f'//s3.sa-east-1.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
     ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
     # Media Assets
     MEDIAFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     MEDIA_S3_PATH = 'media'
     MEDIA_ROOT = f'/{MEDIA_S3_PATH}/'
-    MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{MEDIA_S3_PATH}/'
+    MEDIA_URL = f'//s3.sa-east-1.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{MEDIA_S3_PATH}/'
     #
     INSTALLED_APPS.append('s3_folder_storage')
     INSTALLED_APPS.append('storages')
