@@ -9,10 +9,10 @@ gunicorn = "*"
 pytest-django = "*"
 python-decouple = "*"
 dj-database-url = "*"
-django-s3-folder-storage = "*"
 django-debug-toolbar = "*"
 sentry-sdk = "*"
 psycopg2-binary = "*"
+django-storages = "*"
 
 [dev-packages]
 flake8 = "*"
